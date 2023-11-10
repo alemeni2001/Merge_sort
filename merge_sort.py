@@ -1,3 +1,4 @@
+import random
 # Funcion que recibe por parametro dos lista y devuelve una ordenada
 def merge (arr1,arr2):
   result = [] #Lista donde se almacena el resultado de la fusion
@@ -14,8 +15,8 @@ def merge (arr1,arr2):
       j += 1
   
   #Después de salir del bucle, verifica si alguna de las listas aún tiene elementos sin procesar.
-  #Si hay elementos restantes en arr1, agrégales al resultado.
-  #Si hay elementos restantes en arr2, agrégales al resultado
+  #Si hay elementos restantes en arr1, se agregan a lista resultado.
+  #Si hay elementos restantes en arr2, se agregan a lista resultado
   if i == len(arr1):
     for k in range(j, len(arr2)):
       result.append(arr2[k])
@@ -44,7 +45,7 @@ def merge_sort (arr):
     return merge(arr1,arr2)
   
 
-unsorted_list = [24, 4, 2, 7, 1, 9, 5, 2, 10, 22, 12, 8]
+unsorted_list = [random.randint(0,100) for x in range(20)]
 sorted_list = merge_sort(unsorted_list)
 
 
